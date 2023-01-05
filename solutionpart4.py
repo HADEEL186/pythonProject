@@ -24,15 +24,16 @@ print(y)
 def main():
     with open("originalfile.txt","a") as file:
         file.write("\n\n")
-        file.write((longestword("results.txt").upper()+" "))*(numlines("results.txt")+1)
+        file.write((longestword("results.txt").upper()+" ")*(numlines("results.txt")))
         file.write("\n")
 
         for i in range(0,7):
             for j in range(0, 7):
                 if (i == j or j == 7 - 1 - i):
-                   print('*', end='')
+                   file.write('*' )
                 else:
-                    print(' ', end='')
-            print()
+                    file.write(' ')
+            file.write("\n")
+
 if __name__=="__main__":
     main()
